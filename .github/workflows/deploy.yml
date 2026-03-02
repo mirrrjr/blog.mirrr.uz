@@ -30,18 +30,20 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: 20
-                  cache: "pnpm" # ✅ npm o'rniga pnpm
+                  cache: "pnpm"
 
             - name: Install dependencies
-              run: pnpm install # ✅ npm ci o'rniga
+              run: pnpm install
 
             - name: Build Next.js
-              run: pnpm build # ✅ npm run build o'rniga
+              run: pnpm build
+              env:
+                  CUSTOM_DOMAIN: true
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: ./out # ✅ static export output
+                  path: ./out
 
     deploy:
         needs: build
