@@ -37,8 +37,6 @@ jobs:
 
             - name: Build Next.js
               run: pnpm build
-              env:
-                  CUSTOM_DOMAIN: true
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
