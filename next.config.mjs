@@ -3,7 +3,7 @@
 const nextConfig = {
     // basePath: '/blog',
     // assetPrefix: '/blog/',
-    output: 'export',
+    // output: 'export',
     typescript: {
         ignoreBuildErrors: true,
     },
