@@ -6,7 +6,7 @@ import { MarkdownRenderer } from '@/components/markdown-renderer'
 import {
   getPostsByLocale,
   getPostBySlugAndLocale,
-  generateStaticParams,
+  generateStaticParams as getBlogStaticParams,
 } from '@/lib/blog-loader'
 import { isValidLocale, type Locale } from '@/lib/i18n'
 import { t } from '@/lib/translations'
@@ -41,11 +41,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const staticParams = generateStaticParams()
-  return staticParams.map(param => ({
-    locale: param.locale,
-    slug: param.slug,
-  }))
+  return getBlogStaticParams()
 }
 
 export default async function PostPage({ params }: PostPageProps) {
