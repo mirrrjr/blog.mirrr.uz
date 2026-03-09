@@ -30,7 +30,7 @@ export function Header() {
         { href: `/${locale}/tags`, label: t(locale, "nav_tags") },
         { href: `/${locale}/projects`, label: t(locale, "nav_projects") },
         {
-            href: "https://github.com",
+            href: "https://github.com/mirrrjr",
             label: t(locale, "nav_github"),
             external: true,
         },
@@ -47,7 +47,7 @@ export function Header() {
                         className="flex items-center flex-shrink-0"
                     >
                         <span className="logo bg-primary text-primary-foreground font-bold font-mono text-base sm:text-lg px-4 py-2 leading-none">
-                            Terminus
+                            MIRRR
                         </span>
                     </Link>
 
