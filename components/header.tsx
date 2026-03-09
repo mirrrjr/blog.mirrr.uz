@@ -3,6 +3,9 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useIsMobile } from '@/hooks/use-mobile'
+import { LanguageSwitcher } from './language-switcher'
+import { type Locale, DEFAULT_LOCALE } from '@/lib/i18n'
+import { t } from '@/lib/translations'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,16 +14,22 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Menu } from 'lucide-react'
 
+function getLocaleFromPathname(pathname: string): Locale {
+  const match = pathname.match(/^\/(en|uz)/)
+  return (match?.[1] as Locale) || DEFAULT_LOCALE
+}
+
 export function Header() {
   const pathname = usePathname()
   const isMobile = useIsMobile()
+  const locale = getLocaleFromPathname(pathname)
 
   const navItems = [
-    { href: '/', label: 'blog' },
-    { href: '/archive', label: 'archive' },
-    { href: '/tags', label: 'tags' },
-    { href: '/projects', label: 'projects' },
-    { href: 'https://github.com', label: 'github', external: true },
+    { href: `/${locale}/`, label: t(locale, 'nav_blog') },
+    { href: `/${locale}/archive`, label: t(locale, 'nav_archive') },
+    { href: `/${locale}/tags`, label: t(locale, 'nav_tags') },
+    { href: `/${locale}/projects`, label: t(locale, 'nav_projects') },
+    { href: 'https://github.com', label: t(locale, 'nav_github'), external: true },
   ]
 
   return (
@@ -29,7 +38,7 @@ export function Header() {
         {/* Top row: Logo and decorative bars as flex-grow filler */}
         <div className="flex items-center gap-3 py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0">
+          <Link href={`/${locale}/`} className="flex items-center flex-shrink-0">
             <span className="logo bg-primary text-primary-foreground font-bold font-mono text-base sm:text-lg px-4 py-2 leading-none">
               Terminus
             </span>
@@ -89,6 +98,11 @@ export function Header() {
                       </Link>
                     </DropdownMenuItem>
                   ))}
+                  <DropdownMenuItem asChild className="border-t">
+                    <div className="w-full flex gap-2 items-center justify-center p-2">
+                      <LanguageSwitcher currentLocale={locale} />
+                    </div>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </>
@@ -97,22 +111,25 @@ export function Header() {
 
         {/* Navigation row (desktop only) */}
         {!isMobile && (
-          <nav className="flex gap-4 sm:gap-6 pb-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
-                className={`text-sm underline transition-colors ${
-                  pathname === item.href && !item.external
-                    ? 'text-primary font-semibold'
-                    : 'text-foreground hover:text-primary'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav className="flex gap-4 sm:gap-6 pb-4 justify-between items-center">
+            <div className="flex gap-4 sm:gap-6">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className={`text-sm underline transition-colors ${
+                    pathname === item.href && !item.external
+                      ? 'text-primary font-semibold'
+                      : 'text-foreground hover:text-primary'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <LanguageSwitcher currentLocale={locale} />
           </nav>
         )}
       </div>

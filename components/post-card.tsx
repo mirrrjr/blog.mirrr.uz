@@ -1,11 +1,13 @@
 import Link from 'next/link'
-import type { BlogPost } from '@/lib/blog-data'
+import type { BlogPost } from '@/lib/blog-loader'
+import type { Locale } from '@/lib/i18n'
 
 interface PostCardProps {
   post: BlogPost
+  locale: Locale
 }
 
-export function PostCard({ post }: PostCardProps) {
+export function PostCard({ post, locale }: PostCardProps) {
   const formattedDate = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: '2-digit',
@@ -14,7 +16,7 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <article className="border border-border p-6 hover:bg-card transition-colors">
-      <Link href={`/blog/${post.id}`} className="group">
+      <Link href={`/${locale}/blog/${post.slug}`} className="group">
         <h2 className="text-xl font-semibold font-mono text-primary group-hover:text-accent transition-colors mb-2">
           {post.title}
         </h2>
@@ -32,7 +34,7 @@ export function PostCard({ post }: PostCardProps) {
         {post.tags.map((tag) => (
           <Link
             key={tag}
-            href={`/tags/${tag}`}
+            href={`/${locale}/tags/${tag}`}
             className="inline-block px-2 py-1 text-xs bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             #{tag}
