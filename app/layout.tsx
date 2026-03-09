@@ -18,13 +18,16 @@ export const viewport: Viewport = {
     colorScheme: "dark",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
-}: Readonly<{
+    params,
+}: {
     children: React.ReactNode;
-}>) {
+    params?: Promise<{ locale?: string }>;
+}) {
+    const locale = (await params)?.locale ?? "en";
     return (
-        <html lang="en">
+        <html lang={locale} suppressHydrationWarning>
             <body className="antialiased">{children}</body>
         </html>
     );
