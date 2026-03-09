@@ -4,13 +4,19 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { PostCard } from '@/components/post-card'
 import { getPostsByLocale } from '@/lib/blog-loader'
-import { isValidLocale, type Locale } from '@/lib/i18n'
+import { isValidLocale, type Locale, SUPPORTED_LOCALES } from '@/lib/i18n'
 import { t } from '@/lib/translations'
 
 interface HomepageProps {
   params: Promise<{
     locale: string
   }>
+}
+
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.map((locale) => ({
+    locale,
+  }))
 }
 
 export default async function Homepage({ params }: HomepageProps) {

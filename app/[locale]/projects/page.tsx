@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { isValidLocale, type Locale } from '@/lib/i18n'
+import { isValidLocale, type Locale, SUPPORTED_LOCALES } from '@/lib/i18n'
 import { t } from '@/lib/translations'
 import { Metadata } from 'next'
 
@@ -9,6 +9,12 @@ interface ProjectsPageProps {
   params: Promise<{
     locale: string
   }>
+}
+
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.map((locale) => ({
+    locale,
+  }))
 }
 
 export async function generateMetadata({

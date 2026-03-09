@@ -1,10 +1,16 @@
 import { notFound } from 'next/navigation'
-import { isValidLocale } from '@/lib/i18n'
+import { isValidLocale, SUPPORTED_LOCALES } from '@/lib/i18n'
 
 interface BlogPageProps {
   params: Promise<{
     locale: string
   }>
+}
+
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.map((locale) => ({
+    locale,
+  }))
 }
 
 export default async function BlogPage({ params }: BlogPageProps) {

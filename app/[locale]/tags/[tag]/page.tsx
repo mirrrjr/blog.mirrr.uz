@@ -3,7 +3,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { PostCard } from '@/components/post-card'
 import { getPostsByLocale } from '@/lib/blog-loader'
-import { isValidLocale, type Locale } from '@/lib/i18n'
+import { isValidLocale, type Locale, SUPPORTED_LOCALES } from '@/lib/i18n'
 import { Metadata } from 'next'
 
 interface TagPageProps {
@@ -11,6 +11,25 @@ interface TagPageProps {
     locale: string
     tag: string
   }>
+}
+
+export function generateStaticParams() {
+  const params: Array<{ locale: string; tag: string }> = []
+  
+  SUPPORTED_LOCALES.forEach((locale) => {
+    const posts = getPostsByLocale(locale)
+    const tags = new Set<string>()
+    
+    posts.forEach((post) => {
+      post.tags.forEach((tag) => tags.add(tag))
+    })
+    
+    tags.forEach((tag) => {
+      params.push({ locale, tag })
+    })
+  })
+  
+  return params
 }
 
 export async function generateMetadata({
