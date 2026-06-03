@@ -1,5 +1,5 @@
 ---
-id: example-post
+id: dockerized-laravel-envirment-en
 title: Create a Complete Dockerized Laravel Environment with PHP, Nginx, MySQL, Redis and Scheduler
 date: 2024-07-17
 author: MIRRR jr.

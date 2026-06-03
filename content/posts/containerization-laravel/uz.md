@@ -1,5 +1,5 @@
 ---
-id: example-post
+id: dockerized-laravel-envirment-uz
 title: PHP, Nginx, MySQL, Redis va Scheduler bilan To'liq Dockerlashtirilgan Laravel Muhitini Yaratish
 date: 2024-07-17
 author: MIRRR jr.
@@ -597,4 +597,7 @@ Va nihoyat, Laravel'ning xuddi shunday narsani takroriy asosda amalga oshira oli
 Mana sizning ilovangiz. Dockerlashtirilgan LEMP muhitida to'liq ishlaydi. Bu har qanday turdagi dasturiy ta'minotni qurishni boshlash uchun mukammal boshlang'ich nuqta. Mono-repo'dan mikro-xizmat yo'naltirilgan yondashuvgacha.
 
 Umid qilamanki, ushbu qo'llanma sizga foydali bo'ldi. Har bir qismni o'z ehtiyojlaringizga moslab erkin o'zgartiring.
+
+```
+
 ```

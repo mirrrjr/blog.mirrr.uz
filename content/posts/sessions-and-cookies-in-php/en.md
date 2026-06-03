@@ -1,5 +1,5 @@
 ---
-id: session-and-cookies-in-php
+id: session-and-cookies-in-php-en
 title: Overview of Cookies and Sessions in PHP
 date: 2026-03-09
 author: MIRRR jr.

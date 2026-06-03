@@ -1,5 +1,5 @@
 ---
-id: session-and-cookies-in-php
+id: session-and-cookies-in-php-uz
 title: PHP da Cookie va Sessiyalarga Umumiy Ko'rinish
 date: 2026-03-09
 author: MIRRR jr.
