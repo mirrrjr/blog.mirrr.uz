@@ -68,7 +68,7 @@ export default async function ArchivePage({ params }: ArchivePageProps) {
         )}
       </main>
 
-      <Footer />
+      <Footer locale={locale} />
     </div>
   )
 }

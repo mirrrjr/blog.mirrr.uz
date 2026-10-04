@@ -81,7 +81,7 @@ export default async function TagPage({ params }: TagPageProps) {
                 </div>
             </main>
 
-            <Footer />
+            <Footer locale={locale} />
         </div>
     );
 }

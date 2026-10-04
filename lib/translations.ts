@@ -32,7 +32,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
         next_post: 'Next Post',
 
-        footer_copyright: '© 2021-{year} MIRRR :: Powered by Next.js :: Theme by Terminus',
+        footer_copyright: '© 2021-{year} MIRRR :: Powered by Next.js',
     },
     uz: {
         nav_blog: 'bloglar',
@@ -41,10 +41,10 @@ export const translations: Record<Locale, Record<string, string>> = {
         nav_projects: 'loyihalar',
         nav_github: 'github',
 
-        hero_title: 'Assalawmu aleykum! 👋',
-        hero_intro: 'Mening ismim Mirsolih — veb ilovalar qurishni va Linux bilan shug\'ullanishni yoqtiruvchi backendga yo\'naltirilgan dasturchi. Mening asosiy stackim server tomonida Laravel & PHP va front tomon React / Next.js dan iborat.',
-        hero_hobby: 'Kod yozmasdan turgan vaqtimda, ehtimol Linux distrolari bilan shug\'ullanaman, o\'zimning configlarimni moslashtiraman.',
-        hero_cta: 'Mening blogimni tekshiring, loyihalarimni ko\'rib chiqing yoki shunchaki salom ayting.',
+        hero_title: 'Assalomu alaykum! 👋',
+        hero_intro: 'Men Mirsolihman — veb ilovalar yaratish va Linux bilan shug\'ullanishni yaxshi ko\'radigan backend dasturchi. Asosiy stackim: serverda Laravel va PHP, frontendda React / Next.js.',
+        hero_hobby: 'Kod yozmayotgan paytlarim, ehtimol, Linux distrolarini sinab ko\'rayotgan yoki o\'z configlarimni sozlayotgan bo\'laman.',
+        hero_cta: 'Blogimni o\'qing, loyihalarim bilan tanishing yoki shunchaki salom yozing.',
 
         link_blog: 'bloglar',
         link_projects: 'loyihalar',
@@ -65,7 +65,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
         next_post: 'Keyingi post',
 
-        footer_copyright: '© 2021-{year} MIRRR :: Powered by Next.js :: Theme by Terminus',
+        footer_copyright: '© 2021-{year} MIRRR :: Next.js asosida',
     },
 }
 

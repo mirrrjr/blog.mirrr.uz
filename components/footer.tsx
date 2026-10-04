@@ -1,7 +1,13 @@
 import { AtSign, GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
 import Link from "next/link";
+import type { Locale } from "@/lib/i18n";
+import { t } from "@/lib/translations";
 
-export function Footer() {
+interface FooterProps {
+    locale: Locale;
+}
+
+export function Footer({ locale }: FooterProps) {
     const socialLinks = [
         {
             id: "email",
@@ -58,8 +64,10 @@ export function Footer() {
 
                 <div className="text-center text-sm text-muted-foreground border-t border-border pt-6">
                     <p>
-                        © 2021-{new Date().getFullYear()} MIRRR :: Powered by
-                        Next.js :: Theme by Terminus
+                        {t(locale, "footer_copyright").replace(
+                            "{year}",
+                            String(new Date().getFullYear()),
+                        )}
                     </p>
                 </div>
             </div>

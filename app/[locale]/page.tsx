@@ -142,7 +142,7 @@ export default async function Homepage({ params }: HomepageProps) {
                 )}
             </main>
 
-            <Footer />
+            <Footer locale={locale} />
         </div>
     );
 }

@@ -53,7 +53,7 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
         </div>
       </main>
 
-      <Footer />
+      <Footer locale={locale} />
     </div>
   )
 }

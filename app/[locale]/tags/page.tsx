@@ -85,7 +85,7 @@ export default async function TagsPage({ params }: TagsPageProps) {
         )}
       </main>
 
-      <Footer />
+      <Footer locale={locale} />
     </div>
   )
 }
