@@ -26,9 +26,21 @@ export function Header() {
 
     const navItems = [
         // { href: `/${locale}/`, label: t(locale, "nav_blog") },
-        { href: `/${locale}/archive`, label: t(locale, "nav_archive") },
-        { href: `/${locale}/tags`, label: t(locale, "nav_tags") },
-        { href: `/${locale}/projects`, label: t(locale, "nav_projects") },
+        {
+            href: `/${locale}/archive`,
+            label: t(locale, "nav_archive"),
+            external: false,
+        },
+        {
+            href: `/${locale}/tags`,
+            label: t(locale, "nav_tags"),
+            external: false,
+        },
+        {
+            href: `/${locale}/projects`,
+            label: t(locale, "nav_projects"),
+            external: false,
+        },
         // {
         //     href: "https://github.com/mirrrjr",
         //     label: t(locale, "nav_github"),
