@@ -1,4 +1,9 @@
-import { AtSign, GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
+import {
+    PiButterfly,
+    PiGithubLogoBold,
+    PiLinkedinLogoBold,
+    PiMailboxBold,
+} from "react-icons/pi";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { t } from "@/lib/translations";
@@ -11,25 +16,25 @@ export function Footer({ locale }: FooterProps) {
     const socialLinks = [
         {
             id: "email",
-            icon: <MailIcon />,
+            icon: <PiMailboxBold />,
             href: "mailto:mirrrrjr@gmail.com",
             label: "Email",
         },
         {
             id: "github",
-            icon: <GithubIcon />,
+            icon: <PiGithubLogoBold />,
             href: "https://github.com/mirrrjr",
             label: "GitHub",
         },
         {
             id: "linkedin",
-            icon: <LinkedinIcon />,
+            icon: <PiLinkedinLogoBold />,
             href: "https://linkedin.com/in/mirrrjr",
             label: "LinkedIn",
         },
         {
             id: "bluesky",
-            icon: <AtSign />,
+            icon: <PiButterfly />,
             href: "https://bsky.app/profile/mirrr.uz",
             label: "Bluesky",
         },
@@ -54,7 +59,7 @@ export function Footer({ locale }: FooterProps) {
                                     ? "noopener noreferrer"
                                     : undefined
                             }
-                            className="text-primary hover:text-accent transition-colors text-lg"
+                            className="text-primary hover:text-accent transition-colors text-lg md:text-2xl lg:text-4xl"
                             aria-label={link.label}
                         >
                             {link.icon}
