@@ -25,15 +25,15 @@ export function Header() {
     const locale = getLocaleFromPathname(pathname);
 
     const navItems = [
-        { href: `/${locale}/`, label: t(locale, "nav_blog") },
+        // { href: `/${locale}/`, label: t(locale, "nav_blog") },
         { href: `/${locale}/archive`, label: t(locale, "nav_archive") },
         { href: `/${locale}/tags`, label: t(locale, "nav_tags") },
         { href: `/${locale}/projects`, label: t(locale, "nav_projects") },
-        {
-            href: "https://github.com/mirrrjr",
-            label: t(locale, "nav_github"),
-            external: true,
-        },
+        // {
+        //     href: "https://github.com/mirrrjr",
+        //     label: t(locale, "nav_github"),
+        //     external: true,
+        // },
     ];
 
     return (

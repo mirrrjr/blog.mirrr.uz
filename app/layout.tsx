@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     //     "A minimal developer blog with a terminal-inspired aesthetic. Thoughts on code, math, and technology.",
     generator: "Next.js",
     metadataBase: new URL("https://blog.mirrr.uz"),
-    title: { default: "MIRRR", template: "%s | MIRRR" },
+    title: "MIRRR's blog",
     description: "MIRRR's blog website",
     alternates: {
         canonical: "https://blog.mirrr.uz",
